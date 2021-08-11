@@ -9,14 +9,45 @@
     <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-    <div class="choice-wrapper"></div>
+    <div id="container">
+        <div id="quiz-home">
+            <button class="btn-start">퀴즈시작!</button>
+        </div>
+
+        <div id="quiz-content">
+            <span class="quiz-num"></span> <!--번호넘버링-->
+            <span class="quiz-question"></span> <!--문제 질문-->
+            <div class="ox-wrapper"> <!--OX-->
+                <input type="radio" name="ox" id="ox-o"><label for="ox-o"></label>
+                <input type="radio" name="ox" id="ox-x"><label for="ox-x"></label>
+            </div>
+            <div class="choice-wrapper"></div> <!--객관식-->
+            <div class="input-wrapper"> <!--주관식-->
+                <input type="text" name="input-text" id="input-text">
+            </div>
+            <button class="btn-confirm">정답확인</button>
+        </div>
+        
+        <div id="quiz-result">
+
+        </div>
+    </div>
+
 </body>
 <script>
     const quiz = [{
         type:1,
-        question:'정답은?',
-        choice: ['정답1번','정답2','정답3','정답4'],
+        question:'객관식 문제?',
+        choice: ['객관식정답1','객관식정답2','객관식정답3','객관식정답4'],
         answer: 2
+    },{
+        type:0,
+        quiestion: 'ox 문제',
+        choice: ['o','x'],
+    },{
+        type:2,
+        question:'주관식 문제?',
+        answer: '주관식 정답'
     }]
 </script>
 <script src="quiz.js"></script>
